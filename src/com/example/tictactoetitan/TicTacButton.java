@@ -9,6 +9,7 @@ public class TicTacButton extends Button {
 	
 	public enum State {cross, circle}
 	int _x,_y;
+	private boolean is_assigned = false;
 	
 	public TicTacButton(Context context) {
 		super(context);
@@ -30,7 +31,7 @@ public class TicTacButton extends Button {
 		setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
-				changeState();
+				if (!is_assigned) { changeState(); is_assigned = true;}
 			}
 		});
 	}
