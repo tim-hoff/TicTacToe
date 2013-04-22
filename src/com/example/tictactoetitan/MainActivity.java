@@ -12,6 +12,8 @@ public class MainActivity extends Activity {
 	TicTacButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
 	static State state;
 	static TextView message;
+	
+	int[][] tictac;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +44,9 @@ public class MainActivity extends Activity {
 		btn9 = (TicTacButton) findViewById(R.id.button9);
 		
 		message = (TextView) findViewById(R.id.textView1);
+		tictac = new int[3][3];
 		
 		state = State.circle;
-		
-		message.setText(state.toString());
 	}
 	
 	public static void changeState()
