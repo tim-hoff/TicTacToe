@@ -1,5 +1,7 @@
 package com.example.tictactoetitan;
 
+import com.example.tictactoetitan.TicTacButton.State;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,7 +9,7 @@ import android.view.Menu;
 public class MainActivity extends Activity {
 	
 	TicTacButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
-	
+	State state;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,5 +38,7 @@ public class MainActivity extends Activity {
 		btn7 = (TicTacButton) findViewById(R.id.button7);
 		btn8 = (TicTacButton) findViewById(R.id.button8);
 		btn9 = (TicTacButton) findViewById(R.id.button9);
+		
+		state = State.circle;
 	}
 }
