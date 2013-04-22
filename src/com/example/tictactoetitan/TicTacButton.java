@@ -28,7 +28,6 @@ public class TicTacButton extends Button {
 	{
 		setOnClickListener(new OnClickListener()
 		{
-			@Override
 			public void onClick(View v) {
 				changeState();
 			}
