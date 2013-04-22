@@ -53,4 +53,9 @@ public class MainActivity extends Activity {
 		state = (state == State.circle) ? State.cross : State.circle;
 		message.setText(state.toString());
 	}
+	
+	public void gameStateCheck()
+	{
+		
+	}
 }
