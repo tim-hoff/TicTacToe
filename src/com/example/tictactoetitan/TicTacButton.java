@@ -40,7 +40,7 @@ public class TicTacButton extends Button {
 		if (MainActivity.state == State.circle) setText("O");
 		if (MainActivity.state == State.cross) setText("X");
 		
-		MainActivity.changeState();
+		MainActivity.changeState(_x,_y);
 	}
 	
 	public void set_x(int x) {_x=x;}
