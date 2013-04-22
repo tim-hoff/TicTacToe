@@ -42,4 +42,9 @@ public class TicTacButton extends Button {
 		
 		MainActivity.changeState();
 	}
+	
+	public void gameStateCheck()
+	{
+		
+	}
 }
