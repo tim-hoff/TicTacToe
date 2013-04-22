@@ -6,7 +6,7 @@
 
 ###### Make sure you watch the repository to keep up with all the changes I make to the app. The watch button should be somewhere at the top
 
-<hr>
+<strong>If you do install git</strong>
 
 <p><code>git clone https://github.com/awesomegamer/TicTacToe.git TicTacToeTitan</code> will clone the repository and automatically rename the project 
 folder to TicTacToeTitan</p>
