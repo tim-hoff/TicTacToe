@@ -31,16 +31,15 @@ public class MainActivity extends Activity {
 	
 	public void initialize()
 	{
-		btn1 = (TicTacButton) findViewById(R.id.button1);
-		btn1 = (TicTacButton) findViewById(R.id.button1);
-		btn2 = (TicTacButton) findViewById(R.id.button2);
-		btn3 = (TicTacButton) findViewById(R.id.button3);
-		btn4 = (TicTacButton) findViewById(R.id.button4);
-		btn5 = (TicTacButton) findViewById(R.id.button5);
-		btn6 = (TicTacButton) findViewById(R.id.button6);
-		btn7 = (TicTacButton) findViewById(R.id.button7);
-		btn8 = (TicTacButton) findViewById(R.id.button8);
-		btn9 = (TicTacButton) findViewById(R.id.button9);
+		btn1 = (TicTacButton) findViewById(R.id.button1); btn1.set_x(0); btn1.set_y(0);
+		btn2 = (TicTacButton) findViewById(R.id.button2); btn2.set_x(0); btn2.set_y(0);
+		btn3 = (TicTacButton) findViewById(R.id.button3); btn3.set_x(0); btn3.set_y(0);
+		btn4 = (TicTacButton) findViewById(R.id.button4); btn4.set_x(0); btn4.set_y(0);
+		btn5 = (TicTacButton) findViewById(R.id.button5); btn5.set_x(0); btn5.set_y(0);
+		btn6 = (TicTacButton) findViewById(R.id.button6); btn6.set_x(0); btn6.set_y(0);
+		btn7 = (TicTacButton) findViewById(R.id.button7); btn7.set_x(0); btn7.set_y(0);
+		btn8 = (TicTacButton) findViewById(R.id.button8); btn8.set_x(0); btn9.set_y(0);
+		btn9 = (TicTacButton) findViewById(R.id.button9); btn9.set_x(0); btn9.set_y(0);
 		
 		message = (TextView) findViewById(R.id.textView1);
 		tictac = new int[3][3];
@@ -56,5 +55,6 @@ public class MainActivity extends Activity {
 	
 	public void gameStateCheck()
 	{
+		
 	}
 }

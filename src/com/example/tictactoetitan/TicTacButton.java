@@ -8,6 +8,7 @@ import android.widget.Button;
 public class TicTacButton extends Button {
 	
 	public enum State {cross, circle}
+	int _x,_y;
 	
 	public TicTacButton(Context context) {
 		super(context);
@@ -41,4 +42,9 @@ public class TicTacButton extends Button {
 		
 		MainActivity.changeState();
 	}
+	
+	public void set_x(int x) {_x=x;}
+	public void set_y(int y) {_y=y;}
+	public int get_x() {return _x;}
+	public int get_y() {return _y;}
 }
