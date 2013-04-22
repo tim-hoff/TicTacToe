@@ -1,15 +1,17 @@
 package com.example.tictactoetitan;
 
-import com.example.tictactoetitan.TicTacButton.State;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TextView;
+
+import com.example.tictactoetitan.TicTacButton.State;
 
 public class MainActivity extends Activity {
 	
 	TicTacButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
-	State state;
+	static State state;
+	static TextView message;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,16 @@ public class MainActivity extends Activity {
 		btn8 = (TicTacButton) findViewById(R.id.button8);
 		btn9 = (TicTacButton) findViewById(R.id.button9);
 		
+		message = (TextView) findViewById(R.id.textView1);
+		
 		state = State.circle;
+		
+		message.setText(state.toString());
+	}
+	
+	public static void changeState()
+	{
+		state = (state == State.circle) ? State.cross : State.circle;
+		message.setText(state.toString());
 	}
 }
