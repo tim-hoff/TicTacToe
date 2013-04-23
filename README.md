@@ -9,7 +9,7 @@
 ###### Make sure you watch the repository to keep up with all the changes I make to the app. The watch button should be somewhere at the top
 
 <br>
-<br>
+<hr>
 
 <strong>If you do install git, the following commands should work for you :)</strong>
 
