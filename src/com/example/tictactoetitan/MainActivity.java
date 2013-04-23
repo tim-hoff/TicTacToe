@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
 	{
 		total_moves++;
 		tictac[x][y] = state;
-		if (game_over())
+		if (game_over() || total_moves == 9)
 		{
 			game_state = true;
 			if (total_moves == 9)
