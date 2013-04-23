@@ -86,7 +86,12 @@ public class MainActivity extends Activity {
 	
 	public static boolean game_over()
 	{
+		int d_ctr=0, d2_ctr=0;
 		for (int i=0; i<3; i++)
+		{
+			if (tictac[i][i] == state) d_ctr++;
+			if (tictac[2-i][i] == state) d2_ctr++;
+			if (d_ctr == 3 || d2_ctr==3) return true;
 			for (int j=0; j<3; j++)
 			{
 				if (tictac[i][j] != state) continue;
@@ -100,7 +105,7 @@ public class MainActivity extends Activity {
 					if (tictac[i][k] == state) ctr++;
 				if (ctr == 3) return true;
 			}
-		
+		}
 		return false;
 	}
 }
