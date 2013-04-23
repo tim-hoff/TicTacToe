@@ -31,7 +31,7 @@ public class TicTacButton extends Button {
 		setOnClickListener(new OnClickListener()
 		{
 			public void onClick(View v) {
-				if (!is_assigned) { changeState(); is_assigned = true;}
+				if (!is_assigned && !MainActivity.game_state) { changeState(); is_assigned = true;}
 			}
 		});
 	}
@@ -48,4 +48,6 @@ public class TicTacButton extends Button {
 	public void set_y(int y) {_y=y;}
 	public int get_x() {return _x;}
 	public int get_y() {return _y;}
+	
+	public void reset() {setText(""); is_assigned = false;}
 }

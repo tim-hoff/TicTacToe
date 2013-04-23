@@ -85,4 +85,13 @@
         android:layout_marginTop="75dp"
         android:text="TextView" />
 
+    <Button
+        android:id="@+id/restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/button9"
+        android:text="Restart" />
+
 </RelativeLayout>
