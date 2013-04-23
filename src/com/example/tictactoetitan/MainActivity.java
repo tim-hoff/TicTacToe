@@ -101,15 +101,14 @@ public class MainActivity extends Activity {
 			for (int j=0; j<3; j++)
 			{
 				if (tictac[i][j] != state) continue;
-				int ctr = 0;
+				int c_ctr = 0, r_ctr=0;
 				for(int k=0; k<3; k++)
-					if (tictac[k][j] == state) ctr++;
-				if (ctr == 3) return true;
+				{
+					if (tictac[k][j] == state) c_ctr++;
+					if (tictac[i][k] == state) r_ctr++;
+				}
 				
-				ctr=0;
-				for(int k=0; k<3; k++)
-					if (tictac[i][k] == state) ctr++;
-				if (ctr == 3) return true;
+				if (r_ctr == 3 || c_ctr == 3) return true;
 			}
 		}
 		return false;
