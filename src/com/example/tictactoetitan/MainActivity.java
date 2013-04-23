@@ -9,9 +9,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.tictactoetitan.LoginDialogFragment.LoginDialogListener;
 import com.example.tictactoetitan.TicTacButton.State;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements LoginDialogListener{
 	
 	TicTacButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
 	Button btnRestart, btnDialog;
@@ -122,5 +123,10 @@ public class MainActivity extends FragmentActivity {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public void onDialogPositiveClick(DialogFragment dialog) {
+		
 	}
 }

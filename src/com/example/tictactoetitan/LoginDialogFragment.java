@@ -11,6 +11,10 @@ import android.view.LayoutInflater;
 @SuppressLint("NewApi")
 public class LoginDialogFragment extends DialogFragment {
 	
+	public interface LoginDialogListener {
+        public void onDialogPositiveClick(DialogFragment dialog);
+    }
+	
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		
@@ -21,12 +25,7 @@ public class LoginDialogFragment extends DialogFragment {
 	               @Override
 	               public void onClick(DialogInterface dialog, int id) {
 	               }
-	           })
-	           .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-	               public void onClick(DialogInterface dialog, int id) {
-	                   LoginDialogFragment.this.getDialog().cancel();
-	               }
-	           });      
+	           });    
 	    return builder.create();
 	}	
 }
