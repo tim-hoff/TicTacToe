@@ -127,6 +127,6 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 
 	@Override
 	public void onDialogPositiveClick(DialogFragment dialog) {
-		
+		message.setText("MainActivity");
 	}
 }

@@ -1,6 +1,7 @@
 package com.example.tictactoetitan;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -24,8 +25,18 @@ public class LoginDialogFragment extends DialogFragment {
 	           .setPositiveButton(R.string.signin, new DialogInterface.OnClickListener() {
 	               @Override
 	               public void onClick(DialogInterface dialog, int id) {
+	            	   listener.onDialogPositiveClick(LoginDialogFragment.this);
 	               }
 	           });    
 	    return builder.create();
 	}	
+	
+	 LoginDialogListener listener;
+	    
+	 @Override
+	 public void onAttach(Activity activity) 
+	 {
+		 super.onAttach(activity);
+		 listener = (LoginDialogListener) activity;
+	 }
 }
