@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 	static State state;
 	static TextView message;
 	static boolean game_state = false;
+	static int total_moves = 0; 
 	
 	static State[][] tictac;
 
@@ -69,17 +70,22 @@ public class MainActivity extends Activity {
 				
 				tictac = new State[3][3];
 				game_state = false;
+				total_moves = 0;
 			}
 		});
 	}
 	
 	public static void changeState(int x, int y)
 	{
+		total_moves++;
 		tictac[x][y] = state;
 		if (game_over())
 		{
 			game_state = true;
-			message.setText(state.toString() + " wins!");
+			if (total_moves == 9)
+				message.setText("Draw!");
+			else
+				message.setText(state.toString() + " wins!");
 		}
 		state = (state == State.circle) ? State.cross : State.circle;
 	}
