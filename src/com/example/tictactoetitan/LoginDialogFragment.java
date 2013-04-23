@@ -20,6 +20,8 @@ public class LoginDialogFragment extends DialogFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		
 	    LayoutInflater inflater = getActivity().getLayoutInflater();
+	    
+	    builder.setTitle("You'll need to login first");
 
 	    builder.setView(inflater.inflate(R.layout.dialog_signin, null))
 	           .setPositiveButton(R.string.signin, new DialogInterface.OnClickListener() {

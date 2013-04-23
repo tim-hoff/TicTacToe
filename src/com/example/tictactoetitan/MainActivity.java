@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.tictactoetitan.LoginDialogFragment.LoginDialogListener;
@@ -51,7 +52,7 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 		btn8 = (TicTacButton) findViewById(R.id.button8); btn8.set_x(2); btn8.set_y(1);
 		btn9 = (TicTacButton) findViewById(R.id.button9); btn9.set_x(2); btn9.set_y(2);
 		
-		message = (TextView) findViewById(R.id.textView1);
+		message = (TextView) findViewById(R.id.textView);
 		
 		state = State.circle;
 		
@@ -127,6 +128,9 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 
 	@Override
 	public void onDialogPositiveClick(DialogFragment dialog) {
-		message.setText("MainActivity");
+		EditText user_name = (EditText) findViewById(R.id.username);
+		
+		DialogFragment dialog_progress = new MessgeDialogFragment();
+        dialog_progress.show(getSupportFragmentManager(), "progress");
 	}
 }
