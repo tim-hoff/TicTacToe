@@ -94,4 +94,14 @@
         android:layout_toLeftOf="@+id/button9"
         android:text="Restart" />
 
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/restart"
+        android:layout_alignBottom="@+id/restart"
+        android:layout_alignLeft="@+id/button9"
+        android:layout_marginLeft="16dp"
+        android:text="Dialog" />
+
 </RelativeLayout>

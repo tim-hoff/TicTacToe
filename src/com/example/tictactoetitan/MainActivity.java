@@ -1,7 +1,8 @@
 package com.example.tictactoetitan;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,10 +11,10 @@ import android.widget.TextView;
 
 import com.example.tictactoetitan.TicTacButton.State;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 	
 	TicTacButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
-	Button btnRestart;
+	Button btnRestart, btnDialog;
 	static State state;
 	static TextView message;
 	static boolean game_state = false;
@@ -54,6 +55,15 @@ public class MainActivity extends Activity {
 		state = State.circle;
 		
 		btnRestart = (Button) findViewById(R.id.restart);
+		btnDialog = (Button) findViewById(R.id.button10);
+		
+		btnDialog.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				DialogFragment dialog = new LoginDialogFragment();
+		        dialog.show(getSupportFragmentManager(), "Login");
+			}
+		});
+		
 		btnRestart.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
 				btn1.reset();
