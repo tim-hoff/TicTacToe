@@ -76,22 +76,13 @@
         android:layout_alignBottom="@+id/button8"
         android:layout_alignLeft="@+id/button6" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button8"
-        android:layout_below="@+id/button8"
-        android:layout_marginTop="75dp"
-        android:text="TextView" />
-
     <Button
         android:id="@+id/restart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="18dp"
-        android:layout_toLeftOf="@+id/button9"
+        android:layout_alignLeft="@+id/button7"
+        android:layout_below="@+id/button7"
+        android:layout_marginTop="69dp"
         android:text="Restart" />
 
     <Button
@@ -100,8 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/restart"
         android:layout_alignBottom="@+id/restart"
-        android:layout_alignLeft="@+id/button9"
-        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/restart"
         android:text="Dialog" />
 
 </RelativeLayout>

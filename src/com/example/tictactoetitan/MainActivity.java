@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tictactoetitan.LoginDialogFragment.LoginDialogListener;
 import com.example.tictactoetitan.TicTacButton.State;
@@ -16,12 +16,11 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 	
 	TicTacButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
 	Button btnRestart, btnDialog;
-	static State state;
-	static TextView message;
-	static boolean game_state = false;
-	static int total_moves = 0; 
+	State state;
+	boolean game_state = false;
+	int total_moves = 0; 
 	
-	static State[][] tictac;
+	State[][] tictac;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +40,16 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 	{
 		tictac = new State[3][3];
 		
-		btn1 = (TicTacButton) findViewById(R.id.button1); btn1.set_x(0); btn1.set_y(0);
-		btn2 = (TicTacButton) findViewById(R.id.button2); btn2.set_x(0); btn2.set_y(1);
-		btn3 = (TicTacButton) findViewById(R.id.button3); btn3.set_x(0); btn3.set_y(2);
-		btn4 = (TicTacButton) findViewById(R.id.button4); btn4.set_x(1); btn4.set_y(0);
-		btn5 = (TicTacButton) findViewById(R.id.button5); btn5.set_x(1); btn5.set_y(1);
-		btn6 = (TicTacButton) findViewById(R.id.button6); btn6.set_x(1); btn6.set_y(2);
-		btn7 = (TicTacButton) findViewById(R.id.button7); btn7.set_x(2); btn7.set_y(0);
-		btn8 = (TicTacButton) findViewById(R.id.button8); btn8.set_x(2); btn8.set_y(1);
-		btn9 = (TicTacButton) findViewById(R.id.button9); btn9.set_x(2); btn9.set_y(2);
-		
-		message = (TextView) findViewById(R.id.textView);
-		
+		btn1 = (TicTacButton) findViewById(R.id.button1); btn1.set_x(0); btn1.set_y(0); btn1.activity = this;
+		btn2 = (TicTacButton) findViewById(R.id.button2); btn2.set_x(0); btn2.set_y(1); btn2.activity = this;
+		btn3 = (TicTacButton) findViewById(R.id.button3); btn3.set_x(0); btn3.set_y(2); btn3.activity = this;
+		btn4 = (TicTacButton) findViewById(R.id.button4); btn4.set_x(1); btn4.set_y(0); btn4.activity = this;
+		btn5 = (TicTacButton) findViewById(R.id.button5); btn5.set_x(1); btn5.set_y(1); btn5.activity = this;
+		btn6 = (TicTacButton) findViewById(R.id.button6); btn6.set_x(1); btn6.set_y(2); btn6.activity = this;
+		btn7 = (TicTacButton) findViewById(R.id.button7); btn7.set_x(2); btn7.set_y(0); btn7.activity = this;
+		btn8 = (TicTacButton) findViewById(R.id.button8); btn8.set_x(2); btn8.set_y(1); btn8.activity = this;
+		btn9 = (TicTacButton) findViewById(R.id.button9); btn9.set_x(2); btn9.set_y(2); btn9.activity = this;
+				
 		state = State.circle;
 		
 		btnRestart = (Button) findViewById(R.id.restart);
@@ -77,8 +74,6 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 				btn8.reset();
 				btn9.reset();
 				
-				message.setText("");
-				
 				tictac = new State[3][3];
 				game_state = false;
 				total_moves = 0;
@@ -86,7 +81,7 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 		});
 	}
 	
-	public static void changeState(int x, int y)
+	public void changeState(int x, int y)
 	{
 		total_moves++;
 		tictac[x][y] = state;
@@ -94,16 +89,16 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 		{
 			game_state = true;
 			if (total_moves == 9 && !game_over())
-				message.setText("Draw!");
+				toast("Draw!");
 			else
 			{
-				message.setText(state.toString() + " wins!");
+				toast(state.toString() + " wins!");
 			}
 		}
 		state = (state == State.circle) ? State.cross : State.circle;
 	}
 	
-	public static boolean game_over()
+	public boolean game_over()
 	{
 		int d_ctr=0, d2_ctr=0;
 		for (int i=0; i<3; i++)
@@ -125,6 +120,10 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 			}
 		}
 		return false;
+	}
+	
+	public void toast(String message){
+		Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
