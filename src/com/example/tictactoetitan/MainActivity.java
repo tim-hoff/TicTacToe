@@ -1,5 +1,6 @@
 package com.example.tictactoetitan;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -15,7 +16,7 @@ import com.example.tictactoetitan.TicTacButton.State;
 public class MainActivity extends FragmentActivity implements LoginDialogListener{
 	
 	TicTacButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
-	Button btnRestart, btnDialog;
+	Button btnRestart, btnDialog, btnActivity;
 	State state;
 	boolean game_state = false;
 	int total_moves = 0; 
@@ -77,6 +78,14 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 				tictac = new State[3][3];
 				game_state = false;
 				total_moves = 0;
+			}
+		});
+		
+		btnActivity = (Button) findViewById(R.id.button11);
+		btnActivity.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent myIntent = new Intent(MainActivity.this, SampleActivity.class);
+				MainActivity.this.startActivity(myIntent);
 			}
 		});
 	}
