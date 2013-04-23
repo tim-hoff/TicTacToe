@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
 		if (game_over() || total_moves == 9)
 		{
 			game_state = true;
-			if (total_moves == 9)
+			if (total_moves == 9 && !game_over())
 				message.setText("Draw!");
 			else
 				message.setText(state.toString() + " wins!");
