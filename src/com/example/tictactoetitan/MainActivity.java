@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.tictactoetitan.LoginDialogFragment.LoginDialogListener;
@@ -97,7 +96,9 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 			if (total_moves == 9 && !game_over())
 				message.setText("Draw!");
 			else
+			{
 				message.setText(state.toString() + " wins!");
+			}
 		}
 		state = (state == State.circle) ? State.cross : State.circle;
 	}
@@ -127,9 +128,7 @@ public class MainActivity extends FragmentActivity implements LoginDialogListene
 	}
 
 	@Override
-	public void onDialogPositiveClick(DialogFragment dialog) {
-		EditText user_name = (EditText) findViewById(R.id.username);
-		
+	public void onDialogPositiveClick(DialogFragment dialog) {		
 		DialogFragment dialog_progress = new MessgeDialogFragment();
         dialog_progress.show(getSupportFragmentManager(), "progress");
 	}

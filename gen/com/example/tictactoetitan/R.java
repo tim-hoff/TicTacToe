@@ -36,10 +36,10 @@ public final class R {
         public static final int button8=0x7f080007;
         public static final int button9=0x7f080008;
         public static final int password=0x7f08000f;
-        public static final int progressBar1=0x7f08000d;
+        public static final int progressBar1=0x7f08000c;
         public static final int restart=0x7f08000a;
         public static final int textView=0x7f080009;
-        public static final int textView1=0x7f08000c;
+        public static final int textView1=0x7f08000d;
         public static final int username=0x7f08000e;
     }
     public static final class layout {
